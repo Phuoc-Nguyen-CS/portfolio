@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} About Me {% endblock %}
+
+{% block page_content %}
+
+<!-- About -->
+<section class = "about-me py-5">
+    <div class = "container">
+        <h2 class="about-title">About Me</h2>
+        <p class="about-description">
+            a developer who loves creating clean and efficient code with a love for the outdoors
+        </p>
+    </div>
+</section>
+
+<!-- Images -->
+
+<div class="about-grid">
+    <div class="about-item about-item-1">
+        <img src="{% static 'images/adventure.jpg' %}">
+    </div>
+    <div class="about-item about-item-2">
+        <img src="{% static 'images/adventure_2.jpg' %}">
+    </div>
+    <div class="about-item about-item-3">
+        <img src="{% static 'images/adventure_3.jpg' %}">
+    </div>
+    <div class="about-item about-item-4">
+        <img src="{% static 'images/adventure_4.jpg' %}">
+    </div>
+    <div class="about-item about-item-5">
+        <img src="{% static 'images/adventure_5.jpg' %}">
+    </div>
+    <div class="about-item about-item-7">
+        <img src="{% static 'images/adventure_7.jpg' %}">
+    </div>
+    <div class="about-item about-item-6">
+        <img src="{% static 'images/adventure_6.jpg' %}">
+    </div>
+</div>
+ 
+
+<!-- Programming Languages -->
+<section class="skills">
+    <h2>Programming Languages</h2>
+    <div class="skills-container">
+        <div class="skill-box">
+            <img src="{% static 'icons/Python.png' %}" alt="Python">
+            <h3>Python</h3>
+        </div>
+        <div class="skill-box">
+             <img src="{% static 'icons/html.png' %}" alt="HTML">
+            <h3>HTML</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/css.png' %}" alt="css">
+            <h3>CSS</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/javascript.png' %}" alt="JavaScript">
+            <h3>JavaScript</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/SQL.png' %}" alt="SQL">
+            <h3>SQL</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/c.png' %}" alt="C">
+            <h3>C</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/cplus.png' %}" alt="C++">
+            <h3>C++</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/Java.png' %}" alt="Java">
+            <h3>Java</h3>
+    </div>
+</section>
+
+<!-- Frameworks/Tools -->
+<section class="skills">
+    <h2>Frameworks/Tools</h2>
+    <div class="skills-container">
+        <div class="skill-box">
+            <img src="{% static 'icons/Pandas.png' %}" alt="Pandas">
+            <h3>Pandas</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/TensorFlow.png' %}" alt="TensorFlow">
+            <h3>TensorFlow</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/OpenCV.png' %}" alt="OpenCV">
+            <h3>OpenCV</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/React.png' %}" alt="React">
+            <h3>React</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/bootstrap.png' %}" alt="bootstrap">
+            <h3>Bootstrap</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/Django.png' %}" alt="Django">
+            <h3>Django</h3>
+        </div>
+        <div class="skill-box">
+            <img src="{% static 'icons/bs4.png' %}" alt="BeautifulSoup4">
+            <h3>BeautifulSoup4</h3>
+        </div>
+    </div>      
+{% endblock %}

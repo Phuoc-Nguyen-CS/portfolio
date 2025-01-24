@@ -1,0 +1,14 @@
+<!-- pages/templates/pages/home.html -->
+
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<section class="hero">
+    <div class="container">
+        <img src="{% static 'images/profile_img_4.jpg' %}" alt="Profile Picture">
+        <h1>Hello, name is Phuoc Nguyen</h1>
+        <p>Passionate about technology and eager to learn. Open to new opportunities to create, innovate, and grow!</p>
+    </div>
+    <a href="{% url 'about' %}" class="btn btn-custom btn-lg mt-3">Get to Know Me</a>
+</section>
+{% endblock page_content %}
