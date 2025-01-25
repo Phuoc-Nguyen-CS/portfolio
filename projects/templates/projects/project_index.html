@@ -2,23 +2,50 @@
 
 {% block page_content %}
 <h1>Projects</h1>
-<div class="row">
-    {% for project in projects %}
-        <div class = "col-md-4">
-            <div class="card mb-2">
-                {% if project.image %}
-                    <img class="card-img-top" src="{{project.image.url}}">
-                {% endif %}
-                <div class = "card-body">
-                    <h5 class = "card-title">{{project.title}}</h5>
-                    <p class = "card-text">{{project.description}}</p>
-                    <a href = "{% url 'project_detail' project.pk %}"
-                        class = "btn btn-primary">
-                        Read More
-                    </a>
+<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        {% for project in projects %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card text-center">
+                            {% if project.image %}
+                                <img class="card-img-top" src="{{ project.image.url }}" alt="{{ project.title }}">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ project.title }}</h5>
+                                <p class="card-text">{{ project.description }}</p>
+                                <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+
+<!-- Carousel Previews -->
+<div class="carousel-previews mt-3 d-flex justify-content-center">
+    {% for project in projects %}
+        <div class="preview-item text-center {% if forloop.first %}active{% endif %}" data-bs-target="#projectCarousel" data-bs-slide-to="{{ forloop.counter0 }}">
+            {% if project.image %}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="img-thumbnail" style="max-width: 100px;">
+            {% endif %}
+            <p class="small mt-2">{{ project.title }}</p>
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
