@@ -12,7 +12,6 @@
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <div class="position-relative text-light">
                     {% if project.image %}
-                        <!-- Added fixed height and object-fit to maintain consistency -->
                         <img class="carousel-image w-100" src="{{ project.image.url }}" alt="{{ project.title }}" style="height: 500px; object-fit: contain;">
                     {% endif %}
                     <div class="carousel-caption d-block text-start p-4" style="background: rgba(0, 0, 0, 0.6); border-radius: 10px;">
@@ -22,7 +21,7 @@
                         </h5>
                         <p class="text-light" style="font-size: 1rem; line-height: 1.6;">{{ project.description }}</p>
                         
-                        <!-- Technologies as Tags -->
+                        <!-- Tags -->
                         <div class="tech-tags mt-3">
                             {% for tech in project.technologies.all %}
                                 <span class="badge bg-purple m-1">{{ tech.name }}</span>
