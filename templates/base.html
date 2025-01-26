@@ -126,7 +126,7 @@
     /* About me CSS */
     
     .about-me {
-        background: radial-gradient(circle at center,  #388beb, #4fc3f7); 
+        background: radial-gradient(circle at center, #7b1fa2, #9c4dcc); 
         color: #ffffff; 
         text-align: center;
         box-shadow: 12px 7px 17px rgba(0, 0, 0, 0.9);
@@ -305,15 +305,126 @@
 
     /* Project Section */
 
-    .card {
-    background-color: #222;
-    color: #fff;
-    }
-    
-    .carousel-indicators button {
-        background-color: #fff;
+    .project {
+        background: radial-gradient(circle at center, #7b1fa2, #9c4dcc);
+        font-family: 'Smooch Sans', sans-serif;
+        color: #ffffff; 
+        text-align: center; 
+        box-shadow: 12px 7px 17px rgba(0, 0, 0, 0.9); 
+        position: relative; 
+        overflow: hidden; 
+        padding: 50px 20px; 
+        border-radius: 15px; 
     }
 
+    .project::before,
+    .project::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(#ffffff 1px, transparent 1px); /* Dotted pattern */
+        background-size: 50px 50px; /* Adjust size of dots */
+        animation: twinkling 10s infinite linear; /* Animated background */
+        opacity: 0.4; /* Lower opacity for subtle effect */
+    }
+
+    .project::after {
+        animation-delay: -5s; /* Staggered animation */
+        opacity: 0.2; /* Even more subtle effect */
+        transform: rotate(45deg); /* Rotated background */
+    }
+
+    .project h2 {
+        font-size: 2.5rem; /* Large font size for emphasis */
+        font-weight: bold; /* Bold text */
+        margin-bottom: 20px; /* Spacing below the title */
+        letter-spacing: 2px; /* Add space between letters */
+        color: #ffffff; /* Keep the text white */
+    }
+
+    .project p {
+        font-size: 1.2rem; /* Paragraph font size */
+        line-height: 1.6; /* Improve readability */
+        max-width: 700px; /* Limit text width for better readability */
+        margin: 0 auto; /* Center-align content */
+        color: #d3d3d3; /* Soft text color for supporting text */
+    }
+
+    .text-purple {
+    color: #a29bfe; /* Light purple */
+    }
+
+    .project-btn {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .project-btn:hover {
+        background-color: #7b1fa2; /* Purple background */
+        color: #fff; /* White text */
+        border-color: #7b1fa2; /* Optional: match the border with the background */
+    }
+
+    .tech-tags .badge {
+        font-family: 'Smooch Sans', sans-serif;
+        font-size: 1rem;
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #6f42c1; /* Purple color */
+        color: white;
+        margin: 5px;
+    }
+
+    .tech-tags .badge:hover {
+        background-color: #5a2d8d; /* Darker purple on hover */
+    }
+
+    /* Remove the underline from the link */
+    .project-link {
+        font-family: 'Smooch Sans', sans-serif;
+        text-decoration: none;
+        color: #9b59b6;  /* The purple color for the text */
+    }
+
+    .project-link:hover {
+        color: #8e44ad;  /* A darker purple shade for hover effect */
+    }
+
+    /* Ensuring consistent image size for preview items */
+    .preview-item img.preview-img {
+        width: 100px; /* Set fixed width */
+        height: 100px; /* Set fixed height */
+        object-fit: cover; /* Crop the image to fit within the box */
+        transition: transform 0.2s ease-in-out; /* Smooth zoom effect */
+    }
+
+    .preview-item img.preview-img:hover {
+        transform: scale(1.1); /* Slight zoom effect on hover */
+    }
+
+    /* Align the preview items neatly to the left */
+    .carousel-previews {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem; /* Adjust the gap between previews */
+        flex-wrap: wrap; /* Ensure items wrap if there is not enough space */
+    }
+
+    .preview-item {
+        text-align: center;
+    }
+
+    .preview-item p {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: #ffffff;
+    }
+
+    .preview-item img {
+        display: block; /* Remove extra space below the image */
+    }
     @media (max-width: 768px) {
         .hero h1 {
             font-size: 3rem;

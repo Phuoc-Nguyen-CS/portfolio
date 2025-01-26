@@ -1,35 +1,13 @@
 {% extends "base.html" %}
 
 {% block page_content %}
+<!-- Project Section -->
+<section class="project">
+    <h2 class="display-4 text-white fw-bold">Projects</h2>
+</section>
 
-<h1>{{project.title}}</h1>
-<!-- <div class = "row">
-    <div class = "col-md-8">
-        {% if project.image %}
-            <img src="{{ project.image.url }}" width="100%">
-        {% endif %}
-    </div>
-    <div class="col-md-4">
-        <h5>About the projects:</h5>
-        <p>
-            {{project.description}}
-        </p>
-        <br>
-        <h5>Technology used:</h5>
-        <p>{{project.technology}}</p>
-    </div>
-</div> -->
-
-<div class = "project">
-    <ul class="project-list">
-        <li class="project-item"><div class="project-content">Item 1</div></li>
-        <li class="project-item"><div class="project-content">Item 2</div></li>
-        <li class="project-item"><div class="project-content">Item 3</div></li>
-        <li class="project-item"><div class="project-content">Item 4</div></li>
-        <li class="project-item"><div class="project-content">Item 5</div></li>
-        <li class="project-item"><div class="project-content">Item 6</div></li>
-        <li class="project-item"><div class="project-content">Item 7</div></li>
-        <li class="project-item"><div class="project-content">Item 8</div></li>
-    </ul>
+<!-- Project Details Section -->
+<div class="container mt-5">
+    <h3>Test</h3>
 </div>
-{% endblock page_content %}
+{% endblock %}
