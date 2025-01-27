@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)e1pe^041+3&)w8l7%bjstx66l(bi)dw%frq3st*75-q&(3qd^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['localhost', '.vercel.app']
 ALLOWED_HOSTS = ['.vercel.app']
@@ -134,8 +134,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_URL = '/static/'
 # STATICFILES_DIRS = [BASE_DIR / 'static']
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'  # URL prefix for static files
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory where collectstatic will copy all files
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Your custom static folder
 
 # Media files (user uploads)
 MEDIA_URL = '/media/'
