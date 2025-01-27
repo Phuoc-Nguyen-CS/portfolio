@@ -1,12 +1,17 @@
 from pathlib import Path
-import os
 
+# Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-)e1pe^041+3&)w8l7%bjstx66l(bi)dw%frq3st*75-q&(3qd^'
-DEBUG = True  # Change to False in production
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
 
+# Application definition
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'projects.apps.ProjectsConfig',
@@ -35,7 +40,9 @@ ROOT_URLCONF = 'personal_portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates/"],
+        'DIRS': [
+            BASE_DIR / "templates/",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -50,6 +57,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# Directory in which Django will collect static files
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# For local development and vercel
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# Media files (user uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'uploads'
+
+# Database - using SQLite for local development
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -57,25 +78,5 @@ DATABASES = {
     }
 }
 
-AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
-]
-
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Static files settings
-STATIC_URL = '/static/'  # URL prefix for static files
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory where collectstatic will copy all files
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Custom static folder in your project
-
-# Media files settings (if needed in the future)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+# File upload settings (optional)
+MAX_UPLOAD_SIZE = 10485760  # 10MB (adjust as needed)
