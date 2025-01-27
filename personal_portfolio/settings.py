@@ -152,4 +152,4 @@ LOGGING = {
 }
 
 # CSRF trusted origins
-CSRF_TRUSTED_ORIGINS = ['portfolio-pied-psi-47.vercel.app']
+CSRF_TRUSTED_ORIGINS = ['https://portfolio-pied-psi-47.vercel.app']
