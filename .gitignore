@@ -1,2 +1,6 @@
 .env
 .settings2.py
+/static
+/staticfiles
+/uploads
+/contacts
