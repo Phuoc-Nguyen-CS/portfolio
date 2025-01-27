@@ -5,9 +5,17 @@
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
     }],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "personal_portfolio/wsgi.py"
-        }
-    ]
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/media/(.*)",
+      "dest": "/media/$1"
+    },
+    {
+      "src": "(.*)",
+      "dest": "personal_portfolio/wsgi.py"
+    }
+  ]
 }
